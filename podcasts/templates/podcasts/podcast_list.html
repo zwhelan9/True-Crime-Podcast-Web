@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>True Crime Podcasts</h1>
+<div class="podcast-grid">
+
+    {% for podcast in podcasts %}
+    <div class="podcast-tile">
+
+        {% if podcast.image %}
+            <img src="{{ podcast.image.url }}" width="150">
+        {% endif %}
+
+        <div class="podcast-tile-content">
+            <p class="podcast-title">
+                <a href="{% url 'podcast_detail' podcast.id %}">
+                    {{ podcast.title }}
+                </a>
+            </p>
+
+            <p class="podcast-desc">
+                {{ podcast.description|truncatewords:12 }}
+            </p>
+            <form method="POST" action="{% url 'delete_podcast' podcast.id %}">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+            </form>
+        </div>
+
+    </div>
+
+    {% endfor %}
+</div>
+<h2>Add Podcast</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input type="text" name="title" placeholder="Title" required>
+    <br>
+
+    <textarea name="description" placeholder="Description" required></textarea>
+    <br>
+
+    <select name="category">
+        <option value="">Select category</option>
+        {% for cat in categories %}
+            <option value="{{ cat.id }}">{{ cat.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+
+    <input type="file" name="image">
+    <br>
+
+    <button type="submit">Add Podcast</button>
+</form>
+
+{% endblock %}

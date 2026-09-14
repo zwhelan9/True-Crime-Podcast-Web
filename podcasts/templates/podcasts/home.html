@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Welcome to True Crime Podcasts!</h1>
+<p>Discover the best true crime podcasts, read reviews, and find your next obsession.</p>
+
+<div class="search-box">
+  <form method="GET" action="/search/">
+    <input type="text" name="q" placeholder="Search...">
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+<hr>
+
+<h2>⭐ Featured Podcasts</h2>
+
+<div class="podcast-grid">
+  {% for podcast in podcasts %}
+    <div class="podcast-tile">
+      {% if podcast.image %}
+        <img src="{{ podcast.image.url }}">
+      {% endif %}
+
+      <div class="podcast-tile-content">
+        <p class="podcast-title">
+          <a href="/podcasts/{{ podcast.id }}/">
+            {{ podcast.title }}
+          </a>
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<hr>
+
+<h2>🔥 Trending</h2>
+
+<div class="podcast-grid">
+  {% for podcast in trending %}
+    <div class="podcast-tile">
+      {% if podcast.image %}
+        <img src="{{ podcast.image.url }}">
+      {% endif %}
+
+      <div class="podcast-tile-content">
+        <p class="podcast-title">
+          <a href="/podcasts/{{ podcast.id }}/">
+            {{ podcast.title }}
+          </a>
+        </p>
+      </div>
+    </div>
+  {% empty %}
+    <p>No trending podcasts yet.</p>
+  {% endfor %}
+</div>
+
+<hr>
+
+<h2>📊 Average Rating</h2>
+{% if avg_rating is not None %}
+    <p>⭐ {{ avg_rating|floatformat:1 }}/5</p>
+{% else %}
+    <p>No ratings yet</p>
+{% endif %}
+<hr> 
+
+<h2>📂 Categories</h2>
+
+<ul class="category-list">
+  {% for category in categories %}
+    <li>
+      <a href="/podcasts/?category={{ category.id }}">
+        {{ category.name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Search Results</h1>
+
+<!-- 🔍 Search Form -->
+<form method="GET" action="{% url 'search' %}">
+    <input type="text" name="q" placeholder="Search podcasts..." value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+
+<!-- 📊 Results -->
+{% if podcasts %}
+
+    <h2>Results for "{{ query }}"</h2>
+
+    {% for podcast in podcasts %}
+        <div style="margin-bottom: 20px;">
+
+            <!-- 🖼️ Image -->
+            {% if podcast.image %}
+                <img src="{{ podcast.image.url }}" width="120">
+            {% endif %}
+
+            <!-- 🎧 Title -->
+            <h3>
+                <a href="{% url 'podcast_detail' podcast.id %}">
+                    {{ podcast.title }}
+                </a>
+            </h3>
+
+            <!-- 📝 Short description -->
+            <p>
+                {{ podcast.description|truncatewords:20 }}
+            </p>
+
+        </div>
+        <hr>
+    {% endfor %}
+
+{% else %}
+
+    {% if query %}
+        <p>No results found for "{{ query }}".</p>
+    {% else %}
+        <p>Start typing to search podcasts.</p>
+    {% endif %}
+
+{% endif %}
+
+{% endblock %}

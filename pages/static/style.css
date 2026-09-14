@@ -1,0 +1,385 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f7fb;
+    color: #222;
+}
+nav {
+    background-color: #111;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #ff4d4d;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #222;
+}
+.nav-left {
+    display: flex;
+    gap: 20px; 
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-right form {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+}
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.search-box input {
+    flex: 1;
+}
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration:none;
+    font-size: 14px;
+    font-weight: bold;
+}
+.login-btn:hover {
+    background-color: #339c38;
+}
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.logout-btn:hover {
+    background-color: #ff4d4d;
+}
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+h1, h2, h3 {
+    color: #111;
+}
+.footer {
+    background-color: #111; 
+    color: white;
+    margin-top: 40px;
+    padding: 30px 0;
+    text-align: center; 
+}
+.footer-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+.footer-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.footer-links {
+    margin: 15px 0;
+}
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover {
+    color: #ff4d4d;
+}
+.footer-meta {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 10px;
+}
+.podcast-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 15px;
+}
+.podcast-card img {
+    border-radius: 8px;
+}
+button {
+    background-color: #111;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ff4d4d;
+}
+a {
+    color: #333;
+}
+a:hover {
+    color: #ff4d4d;
+}
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+.podcast-tile {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+.podcast-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.podcast-tile img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.podcast-tile-content {
+    padding: 10px;
+}
+.podcast-desc {
+    font-size: 13px;
+    color: #555;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.episode {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.review {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #ff4d4d;
+}
+img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.page-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+.category-list li {
+    margin-bottom: 8px;
+}
+.category-list a {
+    display: inline-block;
+    background: #111;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.category-list a:hover {
+    background: #ff4d4d;
+}
+.podcast-container a {
+    color: #ff4d4d;
+    text-decoration: none;
+}
+.podcast-container a:hover {
+    text-decoration: underline;
+}
+.podcast-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+.podcast-container img {
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+.podcast-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+.podcast-header {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    background: linear-gradient(to bottom, #2a2a2a, #121212);
+    border-radius: 12px;
+}
+.podcast-header img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.podcast-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+.podcast-info p {
+    color: #b3b3b3;
+    max-width: 600px;
+}
+.save-btn {
+    background-color: #ff4d4d;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.unsave-btn {
+   background-color: #ff4d4d;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.save-btn:hover {
+    background-color: #ff4d4d;
+}
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #0e0c0c;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.delete-btn:hover {
+    background-color: #ff4d4d;
+}
+.episodes-title {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    color:#000;
+}
+.episodes-list {
+    margin-top: 20px;
+    color: #02000e;
+}
+.episode-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.episode-row:hover {
+    background-color: #1a1a1a;
+}
+.episode-info h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+.episode-info p {
+    margin: 5px 0 0;
+    color: #b3b3b3;
+    font-size: 0.85rem;
+}
+.episode-actions {
+    font-size: 1.2rem;
+    color: #ff4d4d;
+    cursor: pointer;
+}
+.profile-meta {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-name,
+.profile-email,
+.profile-eyebrow {
+  color: #120101;
+}
+.favorites-heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #050000;
+}
+.favorites-grid {
+  max-width: 700px;           
+  margin: 0 auto;             
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;      
+  gap: 1rem;
+  padding: 0 1rem;               
+}
+.favorites-card {
+  background: #000000;           
+  color: #ffffff;                
+  border: 1px solid #222;
+  padding: 1rem 2rem;     
+  min-width: 140px;
+  max-width: 180px;
+
+  text-align: center;
+  border-radius: 6px;
+
+  transition: 0.2s ease;
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.favorites-card:hover {
+  transform: translateY(-3px);
+  border-color: #ff4d4d;
+}
